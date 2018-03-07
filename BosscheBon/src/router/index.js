@@ -8,6 +8,8 @@ import Bezichtiging from '@/components/Bezichtiging'
 import BezichtigingConfirm from '@/components/BezichtigingConfirm'
 import LoginSuccess from '@/components/LoginSuccess'
 import fblogin from '@/components/fblogin'
+import Coupons from '@/components/coupons'
+import Guide from '@/components/guide'
 
 Vue.use(Router)
 
@@ -52,6 +54,16 @@ export default new Router({
       path: '/login/',
       name: 'login',
       component: fblogin
+    },
+    {
+      path: '/coupons',
+      name: 'Coupons',
+      component: Coupons
+    },
+    {
+      path: '/guide',
+      name: 'Guide',
+      component: Guide
     }
 
   ]
