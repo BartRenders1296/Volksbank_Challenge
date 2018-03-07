@@ -29,9 +29,8 @@
     },
     methods: {
       ActivateCoupon: function (event) {
-         this.$session.set('ActiveCoupon', event)
-        // route to map
-
+        this.$session.set('ActiveCoupon', event)
+        this.$router.push('/maps')
       }
     },
     data () {
