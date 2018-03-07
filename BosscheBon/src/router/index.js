@@ -3,6 +3,9 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Map from '@/components/Map'
 import Maps from '@/components/Maps'
+import Bezichtingen from '@/components/Bezichtingen'
+import Bezichtiging from '@/components/Bezichtiging'
+import BezichtigingConfirm from '@/components/BezichtigingConfirm'
 
 Vue.use(Router)
 
@@ -22,6 +25,22 @@ export default new Router({
       path: '/maps',
       name: 'Maps',
       component: Maps
+    },
+    {
+      path: '/bezichtingen',
+      name: 'Bezichtingen',
+      component: Bezichtingen
+    },
+    {
+      path: '/bezichtiging/:id',
+      name: 'Bezichtiging',
+      component: Bezichtiging
+    },
+    {
+      path: '/bezichtigingconfirm/',
+      name: 'Bezichtiging',
+      component: BezichtigingConfirm
     }
+
   ]
 })
