@@ -7,11 +7,13 @@ import VueSession from 'vue-session'
 import VueAuthenticate from 'vue-authenticate'
 import VueAxios from 'vue-axios'
 import axios from 'axios'
+import VueImageCompare from 'vue-image-compare';
 
 require('../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss')
 
 Vue.config.productionTip = false
 
+Vue.use(VueImageCompare);
 Vue.use(VueAxios, axios)
 Vue.use(VueSession)
 Vue.use(VueAuthenticate, {
