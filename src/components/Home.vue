@@ -19,7 +19,11 @@
     name: 'Home',
     data () {
       return {
-        logo: "./static/img/logo.png"
+        logo: "./static/img/logo.png",
+        fbSignInParams: {
+          scope: 'email,user_likes',
+          return_scopes: true,
+        }
       }
     },
     methods: {
@@ -27,10 +31,22 @@
         this.$auth.authenticate(provider).then(function () {
          alert("test");
         })
+      },
+      onSignInSuccess (response) {
+        FB.api('/me', dude => {
+          console.log(`Good to see you, ${dude.name}.`)
+        console.log(dude.name)
+        this.$router.push("/bonnen/")
+      })
+      },
+      onSignInError (error) {
+        console.log('OH NOES', error)
       }
     }
   }
 </script>
+
+
 
 <style>
   h1 {
