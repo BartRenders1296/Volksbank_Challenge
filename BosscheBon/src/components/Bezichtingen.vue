@@ -4,7 +4,7 @@
 
     <table class="table table-striped">
       <thead>
-        <th scope="col">Bezichtegings type</th>
+        <th scope="col">Bezichtigings type</th>
         <th scope="col">Foto</th>
         <th scope="col"></th>
       </thead>

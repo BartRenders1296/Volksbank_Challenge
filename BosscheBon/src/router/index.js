@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
 import Map from '@/components/Map'
 import Maps from '@/components/Maps'
 import Bezichtingen from '@/components/Bezichtingen'
 import Bezichtiging from '@/components/Bezichtiging'
 import BezichtigingConfirm from '@/components/BezichtigingConfirm'
 import LoginSuccess from '@/components/LoginSuccess'
-import fblogin from '@/components/fblogin'
+import Home from '@/components/home'
 
 Vue.use(Router)
 
@@ -15,8 +14,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Home',
+      component: Home
     },
     {
       path: '/map',
@@ -47,11 +46,6 @@ export default new Router({
       path: '/loginsuccess/',
       name: 'Loginsuccess',
       component: LoginSuccess
-    },
-    {
-      path: '/login/',
-      name: 'login',
-      component: fblogin
     }
 
   ]
