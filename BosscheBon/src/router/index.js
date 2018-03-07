@@ -4,6 +4,8 @@ import Hello from '@/components/Hello'
 import Bezichtingen from '@/components/Bezichtingen'
 import Bezichtiging from '@/components/Bezichtiging'
 import BezichtigingConfirm from '@/components/BezichtigingConfirm'
+import LoginSuccess from '@/components/LoginSuccess'
+import fblogin from '@/components/fblogin'
 
 Vue.use(Router)
 
@@ -28,6 +30,16 @@ export default new Router({
       path: '/bezichtigingconfirm/',
       name: 'Bezichtiging',
       component: BezichtigingConfirm
+    },
+    {
+      path: '/loginsuccess/',
+      name: 'Loginsuccess',
+      component: LoginSuccess
+    },
+    {
+      path: '/login/',
+      name: 'login',
+      component: fblogin
     }
 
   ]

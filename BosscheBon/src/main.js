@@ -4,12 +4,27 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueSession from 'vue-session'
-
-Vue.use(VueSession)
+import VueAuthenticate from 'vue-authenticate'
+import VueAxios from 'vue-axios'
+import axios from 'axios'
 
 require('../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss')
 
 Vue.config.productionTip = false
+
+Vue.use(VueAxios, axios)
+Vue.use(VueSession)
+Vue.use(VueAuthenticate, {
+  baseUrl: 'http://localhost:8080', // Your API domain
+
+  providers: {
+    facebook: {
+      clientId: 2118470915055975,
+      redirectUri: 'http://localhost:8080/auth/callback', // Your client app URL
+      display: 'popup'
+    }
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({
