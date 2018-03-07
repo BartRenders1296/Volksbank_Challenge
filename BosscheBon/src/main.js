@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+require('../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss')
+require('../node_modules/font-awesome/scss/font-awesome.scss')
 
 Vue.config.productionTip = false
 
