@@ -2,7 +2,35 @@
   <div class="google-map" id="Map"></div>
 </template>
 
-<script>
+<script>    
+    var mapStyle = [
+    {
+        featureType: "administrative",
+        elementType: "labels",
+        stylers: [
+        { visibility: "off" }
+        ]
+    },{
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [
+        { visibility: "off" }
+        ]
+    },{
+        featureType: "water",
+        elementType: "labels",
+        stylers: [
+        { visibility: "off" }
+        ]
+    },{
+        featureType: "road",
+        elementType: "labels",
+        stylers: [
+        { visibility: "off" }
+        ]
+    }
+    ]
+
     export default {
       name: 'Map',
       props: ['name'],
@@ -18,17 +46,12 @@
           markers: []
         }
       },
-      methods: {
-          ClickMarker: function (event) {
-              
-          }
-      },
       mounted: function () {
         const options = {
           zoom: 16,
           center: new google.maps.LatLng(51.6890857, 5.3037518),
           disableDefaultUI: true,
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          mapTypeId: 'hybrid',
           styles: [
             {stylers: [{ visibility: 'simplified' }]},
             {elementType: 'labels', stylers: [{ visibility: 'off' }]}
@@ -39,12 +62,17 @@
         this.map = new google.maps.Map(element, options);
         this.markerCoordinates.forEach((coord) => {
             const position = new google.maps.LatLng(coord.latitude, coord.longitude);
-            const marker = new google.maps.Marker({ 
+            const marker = new Marker({ 
                 position,
-                map: this.map
-            });
-            marker.addListener('click', function() {
-                
+                map: this.map,
+                icon: {
+                    path: SQUARE_PIN,
+                    fillColor: '#00CCBB',
+                    fillOpacity: 1,
+                    strokeColor: '',
+                    strokeWeight: 0
+                },
+                map_icon_label: '<span class="map-icon map-icon-point-of-interest"></span>'
             });
             //this.map.fitBounds(this.bounds.extend(position))
         });

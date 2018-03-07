@@ -22,6 +22,7 @@
   // New in 0.4.0
   import * as VueGoogleMaps from 'vue2-google-maps';
   import Vue from 'vue';
+  import Router from 'vue-router'
 
   Vue.use(VueGoogleMaps, {
     load: {
@@ -35,7 +36,7 @@
       return {
         center: {lat: 51.6890857, lng: 5.3037518},
         markers: [{
-          id: 1,
+          id: "standbeeld-jeroen-bosch",
           position: {lat: 51.6890857, lng: 5.3037518}
         }],
         type: "hybrid",
@@ -46,8 +47,8 @@
       }
     },
     methods: {
-        ClickMarker: function (event) {
-            alert(event);
+        ClickMarker: function (id) {
+            this.$router.push('bezichtiging/' + id)
         }
     }
   }
