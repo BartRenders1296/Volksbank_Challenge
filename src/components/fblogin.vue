@@ -30,7 +30,7 @@
         FB.api('/me', dude => {
           console.log(`Good to see you, ${dude.name}.`)
           console.log(dude.name)
-          this.$router.push("/loginsuccess/")
+          this.$router.push("/bonnen/")
       })
       },
       onSignInError (error) {

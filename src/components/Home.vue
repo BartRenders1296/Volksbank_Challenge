@@ -3,7 +3,14 @@
     <h1>Welkom!</h1>
     <img :src="logo" class="img-fluid" height="100px" alt="Bossche Bon" />
     <h2>Inloggen met</h2>
-    <button class="btn btn-primary" @click="authenticate('facebook')"><i class="fab fa-facebook-f"></i>Facebook</button>
+    <fb-signin-button class="btn btn-primary"
+      :params="fbSignInParams"
+      @success="onSignInSuccess"
+      @error="onSignInError"
+      :onlogin="checkLoginState">
+      <i class="fab fa-facebook-f"></i>
+      Sign in with Facebook
+    </fb-signin-button>
   </div>
 </template>
 
