@@ -7,6 +7,8 @@ import Bezichtiging from '@/components/Bezichtiging'
 import BezichtigingConfirm from '@/components/BezichtigingConfirm'
 import LoginSuccess from '@/components/LoginSuccess'
 import Home from '@/components/home'
+import Coupons from '@/components/coupons'
+import Guide from '@/components/guide'
 
 Vue.use(Router)
 
@@ -46,6 +48,24 @@ export default new Router({
       path: '/loginsuccess/',
       name: 'Loginsuccess',
       component: LoginSuccess
+<<<<<<< HEAD
+=======
+    },
+    {
+      path: '/login/',
+      name: 'login',
+      component: fblogin
+    },
+    {
+      path: '/coupons',
+      name: 'Coupons',
+      component: Coupons
+    },
+    {
+      path: '/guide',
+      name: 'Guide',
+      component: Guide
+>>>>>>> a408d9b62fa4d01ea94943c28563c2a3e06e2c88
     }
 
   ]
