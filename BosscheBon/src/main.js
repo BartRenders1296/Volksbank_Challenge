@@ -21,7 +21,6 @@ Vue.use(VueAuthenticate, {
     facebook: {
       clientId: 2118470915055975,
       redirectUri: 'http://localhost:8080/auth/callback', // Your client app URL
-      display: 'popup'
     }
   }
 })
