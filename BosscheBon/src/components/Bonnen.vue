@@ -1,5 +1,5 @@
 <template>
-  <div class="coupons">
+  <div class="bonnen">
     <div class="coupon" v-for="item in list">
       <a class="coupon-a" v-on:click="ActivateCoupon(item)">
         <img :src="item.store" class="img-responsive" />
@@ -23,7 +23,7 @@
   ]
 
   export default {
-    name: 'coupons',
+    name: 'bonnen',
     beforeCreate: function () {
       this.$session.start()
     },
@@ -43,7 +43,7 @@
 </script>
 
 <style scoped>
-  .coupons {
+  .bonnen {
     position: relative;
   }
   .coupon{

@@ -1,15 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import Map from '@/components/Map'
 import Maps from '@/components/Maps'
 import Bezichtingen from '@/components/Bezichtingen'
 import Bezichtiging from '@/components/Bezichtiging'
 import BezichtigingConfirm from '@/components/BezichtigingConfirm'
 import LoginSuccess from '@/components/LoginSuccess'
-import fblogin from '@/components/fblogin'
-import Coupons from '@/components/coupons'
+import Home from '@/components/home'
+import Bonnen from '@/components/bonnen'
 import Guide from '@/components/guide'
+import fblogin from '@/components/fblogin'
 
 Vue.use(Router)
 
@@ -17,13 +16,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
-    },
-    {
-      path: '/map',
-      name: 'Map',
-      component: Map
+      name: 'Home',
+      component: Home
     },
     {
       path: '/maps',
@@ -51,19 +45,19 @@ export default new Router({
       component: LoginSuccess
     },
     {
-      path: '/login/',
-      name: 'login',
-      component: fblogin
-    },
-    {
-      path: '/coupons',
-      name: 'Coupons',
-      component: Coupons
+      path: '/bonnen',
+      name: 'Bonnen',
+      component: Bonnen
     },
     {
       path: '/guide',
       name: 'Guide',
       component: Guide
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: fblogin
     }
 
   ]
