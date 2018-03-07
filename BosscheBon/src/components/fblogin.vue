@@ -12,6 +12,8 @@
         this.$auth.authenticate(provider).then(function () {
           // Execute application logic after successful social authentication
         })
+
+        this.$auth.logout(provider)
       }
     }
   }
