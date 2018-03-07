@@ -26,6 +26,7 @@
           if (file.match(/\.(js|css)$/)) { %>
     <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC98a7wwSS3C6DTm4NPigKTT8bk2w4kNNQ"></script>
   </head>
   <body>
     <noscript>
