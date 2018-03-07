@@ -8,6 +8,7 @@ import LoginSuccess from '@/components/LoginSuccess'
 import Home from '@/components/home'
 import Bonnen from '@/components/bonnen'
 import Guide from '@/components/guide'
+import fblogin from '@/components/fblogin'
 
 Vue.use(Router)
 
@@ -39,7 +40,7 @@ export default new Router({
       component: BezichtigingConfirm
     },
     {
-      path: '/auth/facebook',
+      path: '/loginsuccess/',
       name: 'Loginsuccess',
       component: LoginSuccess
     },
@@ -52,6 +53,11 @@ export default new Router({
       path: '/guide',
       name: 'Guide',
       component: Guide
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: fblogin
     }
 
   ]
