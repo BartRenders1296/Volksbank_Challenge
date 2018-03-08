@@ -1,7 +1,7 @@
 <template>
   <div id="unlockpiece">
     <h1>Je hebt een stukje coupon verdiend</h1>
-      <img :src="foto"/>
+      <img :src="foto" style="border: 1px solid #f2f2f2;"/>
     <br>
     <br>
       <button v-on:click="click" class="btn btn-primary">Terug naar de kaart</button>

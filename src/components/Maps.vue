@@ -6,7 +6,9 @@
         <div class="message">
         <a class="btn btn-primary" v-on:click="startChallenge()">Begin opdracht!</a>
         <p class="head">Wist je dat:</p>
-        <p class="expl">{{object_name}} al meer dan 100 jaar oud is!</p>
+        <p v-if="object_name === 'Het Noordbrabants Museum'" class="expl">Het huidige museum werd in 1615 gebouwd als Jezuïetenklooster</p>
+        <p v-else-if="object_name === 'Restaurant Picasso'" class="expl">Pablo Picasso werd geboren aan de Plaza de La Merced in Malaga</p>
+        <p v-else-if="object_name === 't Paultje'" class="expl">Dat ze bij 't Paultje wel 43 verschillende soorten bieren hebben.</p>
         </div>
     </div>
     <gmap-map
@@ -199,6 +201,10 @@
         },
         startChallenge: function () {
             this.$router.push('/bezichtiging/' + this.object_id)
+        },
+        quitChallenge: function () {
+            this.guide = false;
+            this.zoom = 0;
         }
     }
   }

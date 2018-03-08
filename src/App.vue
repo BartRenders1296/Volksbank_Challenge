@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <span>Bossche Bon</span>
+      <span><button class="btn btn-primary float-left" v-on:click="GoBack()"><i class="fas fa-caret-square-left"></i></button> Bossche Bon</span>
     </header>
     <main>
       <router-view></router-view>
@@ -11,7 +11,12 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  methods: {
+    GoBack: function (event) {
+      this.$router.back()
+    }
+  }
 }
 </script>
 

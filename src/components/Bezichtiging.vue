@@ -29,7 +29,7 @@
               </div>
             </div>
             <div class="col-xs-12">
-              <button class="btn btn-primary" v-on:click="upload(bezichtingen[this.$route.params.id])">Opsturen</button>
+              <button class="btn btn-primary" v-on:click="submit()">Opsturen</button>
             </div>
           </div>
 
@@ -38,21 +38,19 @@
               <input class="form-control" type="text" placeholder="Typ uw antwoord hier..." style="margin-top: 20px;">
             </div>
             <div class="col-xs-12">
-              <button class="btn btn-primary" v-on:click="answer(bezichtingen[this.$route.params.id])">Beantwoord</button>
+              <button class="btn btn-primary" v-on:click="submit()">Beantwoord</button>
             </div>
           </div>
-          <div class="col-md-6">
-            <button class="btn btn-primary" v-on:click="submit">Opsturen</button>
 
           <div v-if="bezichtingen[this.$route.params.id].type == 'multiplechoice'">
             <div class="col-xs-12">
-              <button class="btn btn-primary multiplechoice" v-on:click="answer(bezichtingen[this.$route.params.id])">43</button>
+              <button class="btn btn-primary multiplechoice" v-on:click="submit()">43</button>
             </div>
             <div class="col-xs-12">
-              <button class="btn btn-primary multiplechoice" v-on:click="answer(bezichtingen[this.$route.params.id])">102</button>
+              <button class="btn btn-primary multiplechoice" v-on:click="submit()">102</button>
             </div>
             <div class="col-xs-12">
-              <button class="btn btn-primary multiplechoice" v-on:click="answer(bezichtingen[this.$route.params.id])">67</button>
+              <button class="btn btn-primary multiplechoice" v-on:click="submit()">67</button>
             </div>
           </div>
 
@@ -60,19 +58,18 @@
       </div>
     </div>
   </div>
-  </div>
 </template>
 
 <script>
   const items = {
     'het-noordbrabants-museum': {
-      naam: 'Het Noordbrabants Museum', foto: './static/img/building/noordbrabants-museum.png', tekst: 'Dit beeld is te vinden bij het Noordbrabants museum, zoek dit beeld en probeer dezelfde foto te maken.', points: '2 delen', type: 'image', pieces: 2
+      naam: 'Het Noordbrabants Museum', foto: './static/img/building/noordbrabants-museum.png', tekst: 'Dit beeld is te vinden bij het Noordbrabants museum, zoek dit beeld en probeer dezelfde foto te maken.', points: '1 deel', type: 'image', pieces: 1
     },
     'restaurant-picasso': {
-      naam: 'Restaurant Picasso', foto: './static/img/building/restaurant-picasso.jpg', tekst: 'Wat zijn de openingstijden op woensdag?', points: '2 delen', type: 'question', pieces: 2
+      naam: 'Restaurant Picasso', foto: './static/img/building/restaurant-picasso.jpg', tekst: 'Wat zijn de openingstijden op woensdag?', points: '1 deel', type: 'question', pieces: 1
     },
     't-paultje': {
-      naam: 't Paultje', foto: './static/img/building/het_paultje.png', tekst: 'Hoeveel verschillende bieren hebben ze hier?', points: '1 deel', type: 'multiplechoice', pieces: 1
+      naam: 't Paultje', foto: './static/img/building/het-paultje.jpg', tekst: 'Hoeveel verschillende bieren hebben ze hier?', points: '1 deel', type: 'multiplechoice', pieces: 1
     }
   }
   export default {
@@ -104,24 +101,12 @@
         this.$session.set('CouponPieces', this.$session.get('CouponPieces') + 1)
         var coupon = this.$session.get('ActiveCoupon')
         var couponPieces = this.$session.get('CouponPieces')
-        if (coupon.level == couponPieces) {
-          this.$router.push('/unlockbon/')
+        if (coupon.level <= couponPieces) {
+          this.$router.push('/unlockbon')
         } else {
           this.$router.push('/unlockpiece')
         }
-      },
-      upload: function(e) {
-        if(this.image !== ''){
-          moveOn(e)
-        }
-      },
-      moveOn: function(item) {
-        var pcs = this.$session.get('CouponPieces')
-        this.$session.set('CouponPieces', pcs + item.pieces)
-        this.$router.push('')
       }
-
-
     },
     data () {
       return {
