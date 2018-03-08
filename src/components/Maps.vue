@@ -182,6 +182,13 @@
         ]}
       }
     },
+    beforeCreate: function () {
+      var coupon = this.$session.get('ActiveCoupon')
+      var couponPieces = this.$session.get('CouponPieces')
+      if (coupon.level == couponPieces) {
+        this.$router.push('/unlockbon/')
+      }
+    },
     methods: {
         ClickMarker: function (id,name,position) {
             this.object_id = id;
@@ -191,7 +198,7 @@
             this.zoom = 20;
         },
         startChallenge: function () {
-            this.$router.push('bezichtiging/' + this.object_id)
+            this.$router.push('/bezichtiging/' + this.object_id)
         }
     }
   }

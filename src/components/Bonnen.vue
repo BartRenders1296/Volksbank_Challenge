@@ -30,6 +30,7 @@
     methods: {
       ActivateCoupon: function (event) {
         this.$session.set('ActiveCoupon', event)
+        this.$session.set('CouponPieces', 0)
         this.$router.push('/maps')
       }
     },

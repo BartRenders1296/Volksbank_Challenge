@@ -27,7 +27,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <button class="btn btn-primary" v-on:click="upload">Opsturen</button>
+            <button class="btn btn-primary" v-on:click="submit">Opsturen</button>
           </div>
         </div>
       </div>
@@ -63,11 +63,11 @@
       removeImage: function (e) {
         this.image = '';
       },
-      upload: function(e) {
-        if(this.image !== ''){
-
-        }
+      submit: function(e) {
+        this.$session.set('CouponPieces', this.$session.get('CouponPieces') + 1)
+        this.$router.push('/unlockpiece')
       }
+
     },
     data () {
       return {

@@ -9,6 +9,8 @@ import Home from '@/components/home'
 import Bonnen from '@/components/bonnen'
 import Guide from '@/components/guide'
 import fblogin from '@/components/fblogin'
+import UnlockPiece from '@/components/UnlockPiece'
+import UnlockBon from '@/components/UnlockBon.vue'
 
 Vue.use(Router)
 
@@ -58,6 +60,16 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: fblogin
+    },
+    {
+      path: '/unlockbon',
+      name: 'UnlockBon',
+      component: UnlockBon
+    },
+    {
+      path: '/unlockpiece',
+      name: 'UnlockPiece',
+      component: UnlockPiece
     }
 
   ]

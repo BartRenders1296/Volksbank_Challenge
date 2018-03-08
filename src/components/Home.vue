@@ -6,8 +6,7 @@
     <fb-signin-button class="btn btn-primary"
       :params="fbSignInParams"
       @success="onSignInSuccess"
-      @error="onSignInError"
-      :onlogin="checkLoginState">
+      @error="onSignInError">
       <i class="fab fa-facebook-f"></i>
       Sign in with Facebook
     </fb-signin-button>
