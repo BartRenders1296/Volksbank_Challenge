@@ -226,13 +226,14 @@
 
     .btn-primary {
         border: 0;
-        padding: 20px 50px;
+        padding: 20px 50px !important;
         padding-left: 30px;
         font-size: 26px;
         background: #4bb5d9;
         border-color: #000;
         position: absolute;
         bottom: 105px;
+        text-align: center;
         right: 0;
     }
 
@@ -241,7 +242,6 @@
         background: white;
         padding: 15px;
         font-weight: bold;
-        border-top: 5px solid #4bb5d9;
         border-bottom: 5px solid #4bb5d9;
     }
 
@@ -271,5 +271,6 @@
     p.head {
         font-weight: bold;
         font-size: 18px;
+        margin-bottom: 0;
     }
 </style>

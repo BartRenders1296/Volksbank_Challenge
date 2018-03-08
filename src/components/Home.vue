@@ -8,8 +8,9 @@
       @success="onSignInSuccess"
       @error="onSignInError">
       <i class="fab fa-facebook-f"></i>
-      Sign in with Facebook
-    </fb-signin-button>
+      Facebook
+    </fb-signin-button><br><br>
+    <a class="btn btn-default" v-on:click="skipLogin()">Overslaan</a>
   </div>
 </template>
 
@@ -28,15 +29,16 @@
     methods: {
       authenticate: function (provider) {
         this.$auth.authenticate(provider).then(function () {
-         alert("test");
+          
         })
+      },
+      skipLogin: function () {
+        this.$router.push('/bonnen/')
       },
       onSignInSuccess (response) {
         FB.api('/me', dude => {
-          console.log(`Good to see you, ${dude.name}.`)
-        console.log(dude.name)
-        this.$router.push("/bonnen/")
-      })
+          this.$router.push("/bonnen/")
+        })
       },
       onSignInError (error) {
         console.log('OH NOES', error)
@@ -44,8 +46,6 @@
     }
   }
 </script>
-
-
 
 <style>
   h1 {
