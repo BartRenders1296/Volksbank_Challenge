@@ -3,13 +3,9 @@ import Router from 'vue-router'
 import Maps from '@/components/Maps'
 import Home from '@/components/home'
 import Bonnen from '@/components/bonnen'
-<<<<<<< HEAD
-import Guide from '@/components/guide'
-import fblogin from '@/components/fblogin'
 import UnlockPiece from '@/components/UnlockPiece'
 import UnlockBon from '@/components/UnlockBon.vue'
-=======
->>>>>>> d1cc3b73ae24fb365e2c3f16ec97985a8cf525cd
+import Bezichtiging from '@/components/Bezichtiging.vue'
 
 Vue.use(Router)
 
@@ -34,17 +30,6 @@ export default new Router({
       path: '/bonnen',
       name: 'Bonnen',
       component: Bonnen
-<<<<<<< HEAD
-    },
-    {
-      path: '/guide',
-      name: 'Guide',
-      component: Guide
-    },
-    {
-      path: '/login',
-      name: 'Login',
-      component: fblogin
     },
     {
       path: '/unlockbon',
@@ -55,8 +40,6 @@ export default new Router({
       path: '/unlockpiece',
       name: 'UnlockPiece',
       component: UnlockPiece
-=======
->>>>>>> d1cc3b73ae24fb365e2c3f16ec97985a8cf525cd
     }
 
   ]

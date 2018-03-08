@@ -41,10 +41,8 @@
               <button class="btn btn-primary" v-on:click="answer(bezichtingen[this.$route.params.id])">Beantwoord</button>
             </div>
           </div>
-<<<<<<< HEAD
           <div class="col-md-6">
             <button class="btn btn-primary" v-on:click="submit">Opsturen</button>
-=======
 
           <div v-if="bezichtingen[this.$route.params.id].type == 'multiplechoice'">
             <div class="col-xs-12">
@@ -56,12 +54,12 @@
             <div class="col-xs-12">
               <button class="btn btn-primary multiplechoice" v-on:click="answer(bezichtingen[this.$route.params.id])">67</button>
             </div>
->>>>>>> d1cc3b73ae24fb365e2c3f16ec97985a8cf525cd
           </div>
 
         </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -102,11 +100,16 @@
       removeImage: function (e) {
         this.image = '';
       },
-<<<<<<< HEAD
       submit: function(e) {
         this.$session.set('CouponPieces', this.$session.get('CouponPieces') + 1)
-        this.$router.push('/unlockpiece')
-=======
+        var coupon = this.$session.get('ActiveCoupon')
+        var couponPieces = this.$session.get('CouponPieces')
+        if (coupon.level == couponPieces) {
+          this.$router.push('/unlockbon/')
+        } else {
+          this.$router.push('/unlockpiece')
+        }
+      },
       upload: function(e) {
         if(this.image !== ''){
           moveOn(e)
@@ -116,8 +119,8 @@
         var pcs = this.$session.get('CouponPieces')
         this.$session.set('CouponPieces', pcs + item.pieces)
         this.$router.push('')
->>>>>>> d1cc3b73ae24fb365e2c3f16ec97985a8cf525cd
       }
+
 
     },
     data () {
