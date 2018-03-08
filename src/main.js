@@ -9,6 +9,11 @@ import VueAuthenticate from 'vue-authenticate'
 import VueAxios from 'vue-axios'
 import axios from 'axios'
 import FBSignInButton from 'vue-facebook-signin-button'
+
+
+
+
+
 Vue.use(FBSignInButton)
 
 Vue.config.productionTip = false
